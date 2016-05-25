@@ -6,14 +6,27 @@ jQuery plugin for creating common Alert and Confirm dialogs.
 *Uses jquery dialog under the hood, check the jquery dialog for more information.*
 This plugin assumes that you already have jQuery and jQuery UI included on your page.
 
-## Simplest Usage without any options (using default options)
+## Simplest Usage
+**without any options (using default options)**
 ```js
 $.jqAlert.showAlert({
-    html: 'This is a <strong>sample</strong> alert box.'
+    html: 'This is a <strong>sample</strong> alert box.',
+    onClose: function() {
+    	// write some code here which you want to execute 
+    	// after dialog close or simply ignore this parameter
+	} 
 });
 `or`
 $.jqAlert.showConfirm({
-    html: 'This is a <strong>sample</strong> confirm box.'
+    html: 'This is a <strong>sample</strong> confirm box.',
+    onConfirm: function() {
+    	// write some code here which you want to execute
+    	// after confirmation
+	},
+	onCancel: function() {
+    	// write some code here which you want to execute
+    	// if user does not confirms
+	}
 });
 ```
 
@@ -50,7 +63,8 @@ $.jqAlert.init({
 
 `Once you have called the init(), then simply call the showAlert() and showConfirm() as shown in **Simplest Usage:**`
 
-## Customized Usage (custom options for every Alert or Confirm box)
+## Customized Usage 
+**custom options for every Alert or Confirm box**
 
 ***Alert***
 ```js

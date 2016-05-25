@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Simple Alert demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../jq-plugin.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.jqAlert.showAlert({
+                title: 'Message',
+                height: 300,
+                width: 500,
+                modal: true,
+                buttons: {
+                    Ok: {
+                        text: 'Close'
+                    }
+                },
+                html: $("#alert-message"),
+                onClose: function() {
+                    alert("alert dialog box closed");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="alert-message">This is a <strong>sample</strong> alert box.</div>
+</body>
+</html>

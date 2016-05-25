@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Simple Alert demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../jq-plugin.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.jqAlert.init({
+                alertBox: {
+                    title: 'Alert Box',
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    buttons: {
+                        Ok: {
+                            text: 'Close'
+                        }
+                    },
+                    onClose: null
+                }
+            });
+        });
+        function openAlert1() {
+            $.jqAlert.showAlert({
+                html: "This is Alert box 1, but we all have common title and close button.",
+                onClose: function() {
+                    alert("Alert box 1 closed");
+                }
+            })
+        }
+        function openAlert2() {
+            $.jqAlert.showAlert({
+                html: "This is Alert box 2, but we all have common title and close button.",
+                onClose: function() {
+                    alert("Alert box 2 closed");
+                }
+            })
+        }
+        function openAlert3() {
+            $.jqAlert.showAlert({
+                html: "This is Alert box 3, but we all have common title and close button.",
+                onClose: function() {
+                    alert("Alert box 3 closed");
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="openAlert1()">Open Alert 1</button>
+        <button onclick="openAlert2()">Open Alert 2</button>
+        <button onclick="openAlert3()">Open Alert 3</button>
+    </div>
+</body>
+</html>

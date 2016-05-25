@@ -1,6 +1,6 @@
 (function ($) {
 
-    if ($.MyPlugin) {
+    if ($.jqAlert) {
         return;
     }
 
@@ -69,29 +69,29 @@
 
     var _getRandomDivId = function() {
         var randomNumber = Math.floor((Math.random() * 10000000) + 1);
-        return "dialog-" + randomNumber.toString();
+        return "dialog-div-" + randomNumber.toString();
     }
 
-    $.MyPlugin = {};
+    $.jqAlert = {};
 
-    $.MyPlugin.init = function (customOptions) {
+    $.jqAlert.init = function (customOptions) {
         _defaultOptions = $.extend({}, _defaultOptions, customOptions);
     }
 
-    $.MyPlugin.showAlert = function (alertOptions) {
+    $.jqAlert.showAlert = function (alertOptions) {
         var alertOptions = $.extend({}, _defaultOptions.alertBox, alertOptions);
         var finalDialogOptions = _getAlertDialogOptions(alertOptions);
+
         finalDialogOptions.close = function() {
             if(typeof alertOptions.onClose === "function") {
                 alertOptions.onClose.call({});
             }
             $(this).dialog("destroy");
         }
-
         $("<div>").attr({id: _getRandomDivId()}).html(alertOptions.html).dialog(finalDialogOptions);
     }
 
-    $.MyPlugin.showConfirm = function (confirmOptions) {
+    $.jqAlert.showConfirm = function (confirmOptions) {
         var confirmOptions = $.extend({}, _defaultOptions.confirmBox, confirmOptions);
         var finalDialogOptions = _getConfirmDialogOptions(confirmOptions);
 
@@ -104,5 +104,5 @@
         $("<div>").attr({id: _getRandomDivId()}).html(confirmOptions.html).dialog(finalDialogOptions);   
     }
 
-    return $.MyPlugin;
+    return $.jqAlert;
 }(jQuery));

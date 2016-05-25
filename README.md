@@ -6,16 +6,54 @@ jQuery plugin for creating common Alert and Confirm dialogs.
 *Uses jquery dialog under the hood, check the jquery dialog for more information.*
 This plugin assumes that you already have jQuery and jQuery UI included on your page.
 
-
-## Usage
-
-***Alert***
+## Simplest Usage without any options (using default options)
 ```js
 $.jqAlert.showAlert({
     html: 'This is a <strong>sample</strong> alert box.'
 });
+`or`
+$.jqAlert.showConfirm({
+    html: 'This is a <strong>sample</strong> confirm box.'
+});
+```
 
-or with options
+## Override default options using init()
+```js
+$.jqAlert.init({
+    alertBox: {
+        title: 'Alert Box',
+        height: 'auto',
+        width: 300,
+        modal: true,
+        buttons: {
+            Ok: {
+                text: 'Close'
+            }
+        }
+    },
+    confirmBox: {
+        title: 'Alert Box',
+        height: 'auto',
+        width: 300,
+        modal: true,
+        buttons: {
+            Ok: {
+                text: 'Confirm'
+            },
+            Cancel: {
+            	text: 'Close'
+        	}
+        }
+    }
+});
+```
+
+`Once you have called the init(), then simply call the showAlert() and showConfirm() as shown in **Simplest Usage:**`
+
+## Customized Usage (custom options for every Alert or Confirm box)
+
+***Alert***
+```js
 $.jqAlert.showAlert({
 	html: 'This is a <strong>sample</strong> alert box.',
 	title: 'Message',
@@ -31,16 +69,10 @@ $.jqAlert.showAlert({
     	// write some code here which you want to execute after dialog close
 	}    
 });
-
 ```
 
 ***Confirm***
 ```js
-$.jqAlert.showConfirm({
-    html: 'This is a <strong>sample</strong> confirm box.'
-});
-
-or with options
 $.jqAlert.showConfirm({
 	html: 'This is a <strong>sample</strong> alert box.',
 	title: 'Message',
@@ -67,7 +99,7 @@ $.jqAlert.showConfirm({
 
 ```
 
-## Props
+## Common Props
 * `title`: title of the dialog 
 * `height`: height of the dialog  
 * `width`: width of the dialog  

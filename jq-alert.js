@@ -78,7 +78,7 @@
         _defaultOptions = $.extend({}, _defaultOptions, customOptions);
     }
 
-    $.jqAlert.showAlert = function (alertOptions) {
+    $.jqAlert.alert = function (alertOptions) {
         var alertOptions = $.extend({}, _defaultOptions.alertBox, alertOptions);
         var finalDialogOptions = _getAlertDialogOptions(alertOptions);
 
@@ -91,7 +91,7 @@
         $("<div>").attr({id: _getRandomDivId()}).html(alertOptions.html).dialog(finalDialogOptions);
     }
 
-    $.jqAlert.showConfirm = function (confirmOptions) {
+    $.jqAlert.confirm = function (confirmOptions) {
         var confirmOptions = $.extend({}, _defaultOptions.confirmBox, confirmOptions);
         var finalDialogOptions = _getConfirmDialogOptions(confirmOptions);
 
@@ -104,5 +104,4 @@
         $("<div>").attr({id: _getRandomDivId()}).html(confirmOptions.html).dialog(finalDialogOptions);   
     }
 
-    return $.jqAlert;
 }(jQuery));

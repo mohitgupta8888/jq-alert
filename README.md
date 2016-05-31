@@ -9,7 +9,7 @@ This plugin assumes that you already have jQuery and jQuery UI included on your 
 ## Simplest Usage
 **without any options (using default options)**
 ```js
-$.jqAlert.showAlert({
+$.jqAlert.alert({
     html: 'This is a <strong>sample</strong> alert box.',
     onClose: function() {
     	// write some code here which you want to execute 
@@ -17,7 +17,7 @@ $.jqAlert.showAlert({
 	} 
 });
 `or`
-$.jqAlert.showConfirm({
+$.jqAlert.confirm({
     html: 'This is a <strong>sample</strong> confirm box.',
     onConfirm: function() {
     	// write some code here which you want to execute
@@ -61,14 +61,14 @@ $.jqAlert.init({
 });
 ```
 
-`Once you have called the init(), then simply call the showAlert() and showConfirm() as shown in **Simplest Usage:**`
+`Once you have called the init(), then simply call the alert() and confirm() as shown in **Simplest Usage:**`
 
 ## Customized Usage 
 **custom options for every Alert or Confirm box**
 
 ***Alert***
 ```js
-$.jqAlert.showAlert({
+$.jqAlert.alert({
 	html: 'This is a <strong>sample</strong> alert box.',
 	title: 'Message',
     height: 'auto',
@@ -87,7 +87,7 @@ $.jqAlert.showAlert({
 
 ***Confirm***
 ```js
-$.jqAlert.showConfirm({
+$.jqAlert.confirm({
 	html: 'This is a <strong>sample</strong> alert box.',
 	title: 'Message',
     height: 'auto',

@@ -6,12 +6,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="../jq-alert.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
+        function openAlert() {
             $.jqAlert.alert({
                 html: 'This is a <strong>sample</strong> alert box.'
             });
-        });
+        }
     </script>
 </head>
-<body></body>
+<body>
+    <div>
+        <button onclick="openAlert()">Click Me</button>
+    </div>
+</body>
 </html>
